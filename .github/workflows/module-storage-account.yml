@@ -20,4 +20,10 @@ env:
   MODULE_METADATA_FILE_PATH: modules/storage-account/metadata.json
 
 jobs:
-  # To be added.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Bicep linter
+      run: az bicep build --file ${{ env.TEMPLATE_SPEC_FILE_PATH }}
+
