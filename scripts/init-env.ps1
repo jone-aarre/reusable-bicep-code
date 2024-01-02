@@ -1,5 +1,8 @@
 Connect-AzAccount
 
+$githubOrganizationName = 'jone-aarre'
+$githubRepositoryName = 'reusable-bicep-code'
+
 $applicationRegistration = New-AzADApplication -DisplayName 'toy-reusable'
 New-AzADAppFederatedCredential `
    -Name 'toy-reusable-branch' `
